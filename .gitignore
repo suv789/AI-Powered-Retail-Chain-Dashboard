@@ -1,0 +1,21 @@
+# Virtual environments
+venv/
+.venv/
+
+# Environment variables and secrets
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Streamlit secrets only
+.streamlit/secrets.toml
+
+# System files
+.DS_Store
+
+# Python build files
+*.egg-info/
+dist/
+build/
