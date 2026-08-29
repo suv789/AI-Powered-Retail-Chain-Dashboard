@@ -15,6 +15,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+except Exception:
+    api_key = os.getenv("GEMINI_API_KEY")
+
+if not api_key:
+    raise ValueError("GEMINI_API_KEY not found in Streamlit Secrets or .env file.")
+
+genai.configure(api_key=api_key)
+
 # ── Model name ───────────────────────────────────────────────
 GEMINI_MODEL = "gemini-2.5-flash"
 
