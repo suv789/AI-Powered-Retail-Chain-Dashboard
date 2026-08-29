@@ -368,11 +368,19 @@ if not category_trend.empty:
     
     fig_trend.update_layout(
         xaxis_title="Month",
-        yaxis=dict(title="Revenue (₹)", titlefont=dict(color="#667eea"), showgrid=False),
-        yaxis2=dict(title="Units Sold", titlefont=dict(color="#764ba2"),
-                    overlaying="y", side="right", showgrid=False),
+        yaxis=dict(
+            title=dict(text="Revenue (₹)", font=dict(color="#667eea")),
+            showgrid=False
+        ),
+        yaxis2=dict(
+            title=dict(text="Units Sold", font=dict(color="#764ba2")),
+            overlaying="y",
+            side="right",
+            showgrid=False
+        ),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-        height=350, margin=dict(l=20, r=20, t=20, b=20),
+        height=350,
+        margin=dict(l=20, r=20, t=20, b=20),
         hovermode="x unified",
     )
     st.plotly_chart(fig_trend, use_container_width=True)
