@@ -17,7 +17,6 @@ _engine = None
 def get_engine():
     global _engine
     if _engine is None:
-        # Check Streamlit Cloud secrets first, fallback to os.getenv for local dev
         try:
             import streamlit as st
             db_user = st.secrets["postgres"]["username"]
@@ -33,7 +32,11 @@ def get_engine():
             db_name = os.getenv("DB_NAME")
 
         url = f"postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}?sslmode=require"
-        _engine = create_engine(url, pool_pre_ping=True)
+        _engine = create_engine(
+            url,
+            connect_args={"options": "-csearch_path=public"},
+            pool_pre_ping=True
+        )
     return _engine
 
 
