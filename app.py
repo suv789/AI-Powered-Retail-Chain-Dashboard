@@ -30,7 +30,7 @@ def add_bg_from_local(image_file):
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);  # ← Semi-transparent overlay
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }}
         .main {{
@@ -40,6 +40,26 @@ def add_bg_from_local(image_file):
         h1, h2, p {{
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }}
+        /* Add container styling for sections */
+        .info-container {{
+            background: rgba(30, 100, 150, 0.4);  /* Semi-transparent teal */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            backdrop-filter: blur(5px);
+        }}
+        .info-container h3 {{
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }}
+        .info-container ul {{
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }}
+        .info-container li {{
+            margin: 10px 0;
+            font-size: 16px;
         }}
         </style>
         """,
@@ -55,14 +75,18 @@ st.markdown("Welcome to the Retail Chain Analytics Platform")
 st.markdown("---")
 st.info("👈 Select a page from the sidebar to get started!")
 
+# ── Available Pages Section with styling ──────────────────────
 st.markdown("""
-### Available Pages:
-- **📊 Overview** — Main sales analytics dashboard with KPIs, trends, and AI assistant
-- **🏪 Store Performance** — Compare stores, analyze profitability, and track efficiency metrics
-- **📦 Product Analytics** — Track product trends, analyze SKU performance, and monitor profitability
-""")
+<div class="info-container">
+<h3>Available Pages:</h3>
+
+- <strong>📊 Overview</strong> — Main sales analytics dashboard with KPIs, trends, and AI assistant
+- <strong>🏪 Store Performance</strong> — Compare stores, analyze profitability, and track efficiency metrics
+- <strong>📦 Product Analytics</strong> — Track product trends, analyze SKU performance, and monitor profitability
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("---")
-st.markdown("""
-### 🚀 [Open the Dashboard →](https://ai-powered-retail-chain-dashboard-42kxp5uelufvsiuf9g8zlj.streamlit.app/)
-""")
+# st.markdown("""
+# ### 🚀 [Open the Dashboard →](https://ai-powered-retail-chain-dashboard-42kxp5uelufvsiuf9g8zlj.streamlit.app/)
+# """)
