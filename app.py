@@ -30,52 +30,81 @@ def add_bg_from_local(image_file):
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.35);
             z-index: 1;
         }}
         .main {{
             position: relative;
             z-index: 2;
         }}
+        /* Header background container */
+        .header-container {{
+            background: rgba(20, 50, 70, 0.6);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid #FFD700;
+        }}
+        .header-container h1 {{
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            font-weight: 700;
+            margin: 0;
+        }}
+        .header-container p {{
+            color: #D0D0D0;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+            margin: 10px 0 0 0;
+            font-size: 16px;
+        }}
         h1 {{
-            color: #00D9FF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            font-weight: 700;
         }}
         h2 {{
-            color: #00D9FF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            font-weight: 600;
         }}
         h3 {{
-            color: #00D9FF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            font-weight: 600;
         }}
         p {{
-            color: #FFFFFF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            color: #D0D0D0;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
         }}
         /* Info container styling */
         .info-container {{
-            background: rgba(30, 100, 150, 0.4);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 15px 0;
-            backdrop-filter: blur(5px);
+            background: rgba(30, 60, 80, 0.5);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            backdrop-filter: blur(8px);
+            border-left: 4px solid #FFD700;
         }}
         .info-container h3 {{
-            color: #00D9FF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            margin-top: 0;
         }}
         .info-container ul {{
-            color: #FFFFFF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+            color: #D0D0D0;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
         }}
         .info-container li {{
-            margin: 10px 0;
-            font-size: 16px;
-            color: #FFFFFF;
+            margin: 12px 0;
+            font-size: 15px;
+            color: #D0D0D0;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+            line-height: 1.6;
         }}
         .info-container strong {{
-            color: #00D9FF;
+            color: #FFD700;
+            font-weight: 600;
         }}
         </style>
         """,
@@ -86,8 +115,13 @@ def add_bg_from_local(image_file):
 add_bg_from_local('images/retail-store.jpg')
 
 # ── Content ───────────────────────────────────────────────────
-st.title("🛒 RetailCo Dashboard")
-st.markdown("Welcome to the Retail Chain Analytics Platform")
+st.markdown("""
+<div class="header-container">
+<h1>🛒 RetailCo Dashboard</h1>
+<p>Welcome to the Retail Chain Analytics Platform</p>
+</div>
+""", unsafe_allow_html=True)
+
 st.markdown("---")
 st.info("👈 Select a page from the sidebar to get started!")
 
