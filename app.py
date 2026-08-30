@@ -12,8 +12,8 @@ st.set_page_config(
 
 # ── Add Background Image ──────────────────────────────────────
 def add_bg_from_local(image_file):
-    with open(image_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
+    with open(image_file, "rb") as img_file:
+        encoded_string = base64.b64encode(img_file.read())
     st.markdown(
         f"""
         <style>
@@ -37,29 +37,45 @@ def add_bg_from_local(image_file):
             position: relative;
             z-index: 2;
         }}
-        h1, h2, p {{
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        h1 {{
+            color: #00D9FF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
         }}
-        /* Add container styling for sections */
+        h2 {{
+            color: #00D9FF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+        }}
+        h3 {{
+            color: #00D9FF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+        }}
+        p {{
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+        }}
+        /* Info container styling */
         .info-container {{
-            background: rgba(30, 100, 150, 0.4);  /* Semi-transparent teal */
+            background: rgba(30, 100, 150, 0.4);
             padding: 20px;
             border-radius: 10px;
             margin: 15px 0;
             backdrop-filter: blur(5px);
         }}
         .info-container h3 {{
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            color: #00D9FF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
         }}
         .info-container ul {{
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
         }}
         .info-container li {{
             margin: 10px 0;
             font-size: 16px;
+            color: #FFFFFF;
+        }}
+        .info-container strong {{
+            color: #00D9FF;
         }}
         </style>
         """,
@@ -87,6 +103,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("---")
-# st.markdown("""
-# ### 🚀 [Open the Dashboard →](https://ai-powered-retail-chain-dashboard-42kxp5uelufvsiuf9g8zlj.streamlit.app/)
-# """)
+st.markdown("""
+### 🚀 [Open the Dashboard →](https://ai-powered-retail-chain-dashboard-42kxp5uelufvsiuf9g8zlj.streamlit.app/)
+""")
