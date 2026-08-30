@@ -39,19 +39,19 @@ def add_bg_from_local(image_file):
         }}
         h1 {{
             color: #00D9FF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }}
         h2 {{
             color: #00D9FF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }}
         h3 {{
             color: #00D9FF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }}
         p {{
             color: #FFFFFF;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }}
         /* Info container styling */
         .info-container {{
